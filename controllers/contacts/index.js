@@ -1,13 +1,17 @@
-const getAll = require("./getAll");
-const getById = require("./getById");
-const add = require("./add");
-const removeById = require("./removeById");
-const updateById = require("./updateById");
+const { ctrlWrapper } = require("../../helpers");
+
+const getAllContacts = require("./getAllContacts");
+const getContactById = require("./getContactById");
+const addContact = require("./addContact");
+const deleteContact = require("./deleteContact");
+const updateContact = require("./updateContact");
+const updateFavoriteContact = require("./updateFavoriteContact");
 
 module.exports = {
-  getAll,
-  getById,
-  add,
-  removeById,
-  updateById,
+  getAllContacts: ctrlWrapper(getAllContacts),
+  getContactById: ctrlWrapper(getContactById),
+  addContact: ctrlWrapper(addContact),
+  deleteContact: ctrlWrapper(deleteContact),
+  updateContact: ctrlWrapper(updateContact),
+  updateFavoriteContact: ctrlWrapper(updateFavoriteContact),
 };

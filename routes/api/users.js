@@ -5,10 +5,6 @@ const { userSchemas } = require("../../models");
 
 const router = express.Router();
 
-// 
-
-
-
 router.post(
   "/register",
   validateBody(userSchemas.registerSchema),
