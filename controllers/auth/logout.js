@@ -1,10 +1,12 @@
-const { User } = require("../../models");
+const { User } = require("../../models/user");
 
 const logout = async (req, res) => {
-  const { id } = req.user;
-  await User.findByIdAndUpdate(id, { token: "" });
+  const { _id } = req.user;
+  await User.findByIdAndUpdate(_id, { token: "" });
 
-  res.status(204).send();
+  res.json({
+    message: "Logout success",
+  });
 };
 
 module.exports = logout;
